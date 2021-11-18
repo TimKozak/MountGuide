@@ -1,0 +1,178 @@
+:root {
+  /* COLORS */
+  --dark-color: #4e6255;
+  --primary-color: #3dcf72;
+  --secondary-color: #caffdd;
+  --light-color: #f0f9ef;
+
+  /* FONTS */
+  --leading-font: "Gotham Black", "Montserrat", "Open Sans", sans-serif;
+  --content-font: "Open Sans", sans-serif;
+  --button-font: Arial, sans-serif;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .flex-columns .column,
+  .flex-grid .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+
+  .with-image {
+    margin-left: 0;
+  }
+
+  .big-image {
+    margin-left: 0;
+  }
+
+  .heading {
+    font-size: 7vw;
+    margin: 18vw 0 15vw 0;
+  }
+
+  .phone-image {
+    margin: 0 0 0 7vw;
+  }
+
+  .column-1.header-column {
+    margin-bottom: -7vw;
+  }
+
+  .flex-columns.flex-reverse .row {
+    flex-direction: row;
+  }
+
+  .flex-columns h2 {
+    font-size: 15vw;
+  }
+
+  .flex-columns .row {
+    gap: 5vh;
+  }
+
+  .flex-columns .row.no-reverse-wrap {
+    gap: 0;
+  }
+
+  .mountguide-p {
+    font-size: 4vw;
+    padding-right: 20vw;
+    margin-top: 1.2em;
+  }
+
+  .content-p {
+    font-size: 3.5vw;
+    padding-right: 20vw;
+    margin-top: 0.5em;
+  }
+
+  .main-p {
+    font-size: 4vw;
+    padding-right: 10vw;
+    margin-top: 1.2em;
+  }
+
+  .my-7 {
+    margin: 7vw 0;
+  }
+
+  .column-2 {
+    padding: 0 !important;
+  }
+
+  .logo-img {
+    width: 12vw;
+    height: 100%;
+    margin-right: 5vw;
+  }
+
+  .logo-arrangement h2 {
+    line-height: 1.1;
+    font-size: 4vw;
+  }
+
+  .logo-arrangement h2:first-child {
+    margin-top: 2vw;
+  }
+
+  .header-content .languages {
+    font-size: 2.5vw;
+    margin-right: 2vw;
+    font-family: var(--content-font);
+  }
+
+  .main-header {
+    box-sizing: border-box;
+    padding: 6vw 0 12vw 0;
+  }
+
+  .localisation {
+    width: 5vw;
+    height: auto;
+    margin-left: 0.5vw;
+  }
+
+  .logo .logo {
+    display: flex;
+    gap: 0.5vw;
+    flex-direction: column;
+  }
+
+  .mountguide-phone {
+    font-size: 10vw !important;
+  }
+
+  .btn-text {
+    font-size: 6vw;
+    line-height: 10vw;
+    color: var(--dark-color);
+  }
+
+  .btn {
+    margin-bottom: 10vw;
+    display: block;
+    width: 70vw;
+  }
+
+  .small-heading {
+    font-size: 5vw;
+    padding: 0 10vw;
+  }
+
+  .small-text {
+    margin-top: 1em;
+    font-size: 3.5vw;
+  }
+
+  .little-text {
+    margin-top: 1em;
+    font-size: 4vw;
+    text-decoration: underline;
+  }
+
+  .footer-content {
+    height: 15vw;
+    margin-top: 10vw;
+  }
+
+  .footer-content .mountguide {
+    font-size: 3vw;
+    line-height: 0.5vh;
+  }
+
+  .footer-content .copyright {
+    font-size: 1.8vw;
+    line-height: 0.5vh;
+  }
+
+  .social img {
+    height: 6vw;
+    width: 6vw;
+    font-size: 2.5vw;
+    margin-left: 2.5vw;
+    line-height: 20px;
+    padding: 0.5vw;
+  }
+}
