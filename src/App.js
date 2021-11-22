@@ -13,6 +13,7 @@ import Header from "./pages/Header";
 import Content from "./pages/Content";
 import Buttons from "./pages/Buttons";
 import Footer from "./pages/Footer";
+import Partners from "./pages/Partners";
 
 const App = () => {
   // Scrolling
@@ -24,14 +25,15 @@ const App = () => {
 
   const languageObject = language === "ua" ? ukrainian : english;
 
-  const { header, content, buttons, footer, form } = languageObject;
+  const { header, content, buttons, footer, form, partners } = languageObject;
 
   return (
     <div className="app">
-      {/* <Header lang={header} scroll={executeScroll} setLanguage={setLanguage} /> */}
-      {/* <Content lang={content} /> */}
+      <Header lang={header} scroll={executeScroll} setLanguage={setLanguage} />
+      <Content lang={content} />
       <Buttons lang={buttons} formlang={form} reference={myRef} />
       <Footer lang={footer} />
+      <Partners lang={partners} />
     </div>
   );
 };

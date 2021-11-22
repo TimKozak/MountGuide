@@ -20,7 +20,7 @@ const GuideForm = ({ lang }) => {
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={methods.handleSubmit(onSubmit)}>
+      <form className="container" onSubmit={methods.handleSubmit(onSubmit)}>
         <TextInput
           lang={question1}
           name={question1.googlesheet}
@@ -41,7 +41,7 @@ const GuideForm = ({ lang }) => {
           name={question7.googlesheet}
           is_required={false}
         />
-        <input type="submit" />
+        <input className="btn btn-primary btn-submit" type="submit" />
       </form>
     </FormProvider>
   );

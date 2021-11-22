@@ -3,7 +3,7 @@ import React from "react";
 const Header = ({ lang, scroll, setLanguage }) => {
   return (
     <header class="main-header">
-      <div class="header-content container">
+      <div class="header-content">
         <div class="logo">
           {/* LOGO IMAGE */}
           <img class="logo-img" src="../images/logo.png" alt="" />

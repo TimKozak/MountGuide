@@ -1,10 +1,41 @@
-import React, { forwardedRef, useEffect, useState } from "react";
+import React from "react";
 
-const Checkbox = forwardRef(
-  ({ label, name, value, onChange }, forwardedRef) => {
-    const [checked, setChecked] = useState(false);
+// first, define a helper for combining refs
+function useCombinedRefs(...refs) {
+  const targetRef = React.useRef();
 
-    useEffect(() => {
+  React.useEffect(() => {
+    refs.forEach((ref) => {
+      if (!ref) return;
+
+      if (typeof ref === "function") {
+        ref(targetRef.current);
+      } else {
+        ref.current = targetRef.current;
+      }
+    });
+  }, [refs]);
+
+  return targetRef;
+}
+
+// then our component
+const Checkbox = React.forwardRef(
+  ({ label, name, value, onChange, defaultChecked, ...rest }, forwardedRef) => {
+    const [checked, setChecked] = React.useState(defaultChecked || false);
+
+    const innerRef = React.useRef(null);
+    const combinedRef = useCombinedRefs(forwardedRef, innerRef);
+
+    const setCheckedInput = (checked) => {
+      if (innerRef.current.checked !== checked) {
+        // just emulate an actual click on the input element
+        innerRef.current.click();
+      }
+    };
+
+    React.useEffect(() => {
+      setCheckedInput(checked);
       if (onChange) {
         onChange(checked);
       }
@@ -14,11 +45,11 @@ const Checkbox = forwardRef(
       <div onClick={() => setChecked(!checked)} style={{ cursor: "pointer" }}>
         <input
           style={{ display: "none" }}
-          ref={forwardedRef}
+          ref={combinedRef}
           type="checkbox"
           name={name}
           value={value}
-          checked={checked}
+          defaultChecked={checked}
           onChange={(e) => {
             setChecked(e.target.checked);
           }}
@@ -28,3 +59,5 @@ const Checkbox = forwardRef(
     );
   }
 );
+
+export default Checkbox;
